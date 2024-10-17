@@ -1,15 +1,15 @@
 import React, {useState, useEffect} from "react";
 
 
-function Document(){
-    const [documents, setDocuments] = useState([]);
+function Messager(){
+    const [messages, setMessages] = useState([]);
 
     useEffect(()=>{
         const fetchData = async()=>{
             try{
-                const response = await fetch(' http://127.0.0.1:3000/meetings');
+                const response = await fetch(' http://127.0.0.1:3000/messagers');
                 const data = await response.json()
-                setDocuments(data)
+                setMessages(data)
             }
 
             catch (error){
@@ -25,12 +25,12 @@ function Document(){
 
     return(
         <div>
-            {documents.map((document)=>(
-                <h1> {document.link}</h1>
+            {messages.map((message)=>(
+                <h1> {message.message}</h1>
 
             ))}
         </div>
     )
 }
 
-export default Document
+export default Messager
