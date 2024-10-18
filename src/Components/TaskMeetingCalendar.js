@@ -4,6 +4,8 @@ import dayGridPlugin from '@fullcalendar/daygrid';
 import timeGridPlugin from '@fullcalendar/timegrid';
 import interactionPlugin from '@fullcalendar/interaction';
 import TaskPopUp from './TaskPopUp';
+import { Container, Row, Col } from 'react-bootstrap';
+import 'bootstrap/dist/css/bootstrap.min.css';
 
 const TaskMeetingCalendar = () => {
   const [tasks, setTasks] = useState([]);
@@ -125,23 +127,27 @@ const TaskMeetingCalendar = () => {
   };
 
   return (
-    <div>
-      <FullCalendar
-        plugins={[dayGridPlugin, timeGridPlugin, interactionPlugin]}
-        initialView="dayGridMonth"
-        headerToolbar={{
-          left: 'prev,next today',
-          center: 'title',
-          right: 'dayGridMonth,timeGridWeek,timeGridDay',
-        }}
-        events={tasks}
-        dateClick={handleDateClick}
-        editable={true}
-        eventDrop={handleEventDrop}
-        eventClick={handleEventClick}
-        eventContent={renderEventContent}
-      />
-    </div>
+    <Container fluid className="mt-4">
+      <Row>
+        <Col>
+          <FullCalendar
+            plugins={[dayGridPlugin, timeGridPlugin, interactionPlugin]}
+            initialView="dayGridMonth"
+            headerToolbar={{
+              left: 'prev,next today',
+              center: 'title',
+              right: 'dayGridMonth,timeGridWeek,timeGridDay',
+            }}
+            events={tasks}
+            dateClick={handleDateClick}
+            editable={true}
+            eventDrop={handleEventDrop}
+            eventClick={handleEventClick}
+            eventContent={renderEventContent}
+          />
+        </Col>
+      </Row>
+    </Container>
   );
 };
 
