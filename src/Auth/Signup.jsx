@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import axios from "axios";
 import Form from "react-bootstrap/Form";
-import { useNavigate } from "react-router-dom"; // Import useNavigate
+import { useNavigate } from "react-router-dom";
 
 function SignUp() {
     const navigate = useNavigate(); // Initialize the navigate function
@@ -114,6 +114,7 @@ function SignUp() {
                 <button variant="primary" type="submit">
                     Sign Up
                 </button>
+
             </Form>
         </div>
     );
