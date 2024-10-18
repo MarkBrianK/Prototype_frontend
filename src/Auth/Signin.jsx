@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { Form, Button } from 'react-bootstrap';
 import axios from 'axios';
-import { useNavigate } from 'react-router-dom'; // Import useNavigate
+import { useNavigate, Link } from 'react-router-dom'; // Import useNavigate
 
 const SignInForm = () => {
     const [email, setEmail] = useState('');
@@ -77,7 +77,11 @@ const SignInForm = () => {
                     <Button type="submit">
                         Sign In
                     </Button>
+
                 </Form>
+                <Link  to="/signup">
+              Sign up
+            </Link>
             </div>
         </div>
     );
