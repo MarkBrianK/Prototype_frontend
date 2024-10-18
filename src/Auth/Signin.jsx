@@ -29,10 +29,11 @@ const SignInForm = () => {
                 console.log("Sign in successful, user ID stored");
 
 
-               
+
 
 
                 navigate('/');
+                window.location.reload()
             }
         } catch (error) {
             console.error(error);
