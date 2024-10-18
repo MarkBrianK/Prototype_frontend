@@ -7,9 +7,9 @@ function Navigation() {
   const navigate = useNavigate();
 
   const handleLogout = () => {
-    localStorage.removeItem('user_id'); // Clear user_id
-    navigate('/'); // Redirect to home page after logout
-    window.location.reload(); // Reload to update UI
+    localStorage.removeItem('user_id'); 
+    navigate('/');
+    window.location.reload();
   };
 
   return (
